@@ -1,226 +1,265 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="kk">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TARIH & ӘDEBIET AI — онлайн зерттеу платформасы</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ТАРИХ & ӘДЕБИЕТ AI — Қазақ руханиятының тоғысуы</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f7f1e7;color:#2c2118;line-height:1.55}
-header{background:linear-gradient(135deg,#24170f,#7b542d);color:white;padding:55px 7%}
-header h1{font-size:clamp(34px,6vw,64px);margin:5px 0} header p{max-width:900px;font-size:18px}
-nav{position:sticky;top:0;z-index:10;background:#fff;padding:12px 6%;box-shadow:0 2px 10px #0002;overflow:auto;white-space:nowrap}
-nav a{color:#65421f;text-decoration:none;font-weight:bold;margin-right:18px}
-main{max-width:1150px;margin:auto;padding:35px 6%}.card{background:#fffaf2;border-radius:20px;padding:28px;margin:20px 0;box-shadow:0 7px 25px #0001}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.tile{background:#eadbc4;border-radius:15px;padding:20px}
-input,select{padding:12px;border:1px solid #cdbda8;border-radius:9px;width:100%;margin:6px 0 12px;background:white}
-button{background:#684522;color:white;border:0;border-radius:9px;padding:12px 18px;cursor:pointer;font-weight:bold;margin:4px}
-button.secondary{background:#9b7a55}.quiz{border:1px solid #dfcfba;padding:18px;border-radius:14px;margin:14px 0}.quiz label{display:block;margin:8px 0}
-.result{font-size:20px;font-weight:bold;background:#eee0cd;padding:18px;border-radius:12px;margin-top:15px}
-.ai{background:#17120e;color:#fff}.ai .result{background:#2a211b}.small{font-size:13px;color:#756655}
-footer{background:#24170f;color:white;text-align:center;padding:30px}
-.hidden{display:none}
-@media(max-width:700px){main{padding:20px 4%}}
-
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.person{background:#f3e7d6;border-radius:18px;overflow:hidden;border:1px solid #ddcbb4}
-.person img{width:100%;height:220px;object-fit:cover;display:block;background:#d9c8b2}
-.person h3,.person p{margin-left:18px;margin-right:18px}.person h3{margin-top:16px;color:#65421f}
-.source{font-size:12px;color:#756655;border-top:1px solid #ddcbb4;padding-top:10px;padding-bottom:14px}
-.timeline{display:grid;gap:12px}.timeline div{display:grid;grid-template-columns:150px 1fr;gap:15px;background:#eee0cd;padding:15px;border-radius:12px}.timeline b{color:#684522}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,"Segoe UI",sans-serif;background:#f4f7fb;color:#172033;line-height:1.6}
+header{background:linear-gradient(135deg,#172b5d,#294b91 55%,#5d3b7a);color:#fff;padding:58px 7% 48px}
+.badge{display:inline-block;background:#ffffff22;border:1px solid #ffffff55;border-radius:30px;padding:7px 15px;margin-bottom:14px}
+header h1{font-size:clamp(30px,5vw,58px);line-height:1.08;margin:0 0 14px}
+header p{max-width:850px;font-size:18px;margin:8px 0}
+nav{position:sticky;top:0;z-index:20;background:#fff;box-shadow:0 2px 14px #17203318;overflow:auto;white-space:nowrap}
+nav a{display:inline-block;padding:15px 13px;color:#20396e;text-decoration:none;font-weight:700;font-size:14px}
+nav a:hover{background:#eef3ff}
+main{max-width:1180px;margin:auto;padding:28px 18px 60px}
+section{background:#fff;border-radius:20px;padding:30px;margin:20px 0;box-shadow:0 8px 28px #17203310}
+h2{margin-top:0;color:#213e7a;font-size:28px}
+h3{color:#294b91}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{border:1px solid #e1e7f2;border-radius:16px;padding:20px;background:#fbfcff}
+.card strong{color:#213e7a}
+.timeline{border-left:4px solid #294b91;padding-left:22px}
+.timeline article{margin:0 0 22px}
+.quote{background:#f0f4ff;border-left:5px solid #294b91;padding:18px;border-radius:10px}
+.compare{overflow:auto}
+table{border-collapse:collapse;width:100%;min-width:700px}
+th,td{border:1px solid #dce3ef;padding:12px;vertical-align:top}
+th{background:#edf2ff;color:#20396e}
+figure{margin:0;border-radius:16px;overflow:hidden;background:#eef2f8}
+figure img{width:100%;height:210px;object-fit:cover;display:block}
+figcaption{padding:10px 13px;font-weight:700}
+.ai{background:linear-gradient(135deg,#edf0ff,#f8efff)}
+.btn{display:inline-block;border:0;border-radius:12px;padding:12px 18px;background:#294b91;color:#fff;font-weight:700;cursor:pointer}
+.btn.secondary{background:#6a7284}
+input[type=text],select{width:100%;padding:12px;border:1px solid #cbd5e5;border-radius:10px;font-size:16px}
+.quiz-card{border:1px solid #dbe2ee;border-radius:15px;padding:18px;margin:15px 0;background:#fff}
+.option{display:block;padding:9px 10px;margin:6px 0;border-radius:9px;background:#f5f7fb;cursor:pointer}
+.option:hover{background:#e9efff}
+.progress-wrap{height:13px;background:#e8edf5;border-radius:20px;overflow:hidden;margin:15px 0}
+#progress{height:100%;width:0;background:linear-gradient(90deg,#294b91,#8a4ea3)}
+.result{display:none;margin-top:20px;padding:22px;border-radius:16px;background:#eef7ef;border:1px solid #b9ddbf}
+.score{font-size:34px;font-weight:800;color:#213e7a}
+.small{font-size:13px;color:#657087}
+footer{background:#172033;color:#fff;text-align:center;padding:30px 15px}
+@media(max-width:650px){section{padding:21px}nav a{padding:12px 8px;font-size:12px}figure img{height:180px}}
 </style>
 </head>
 <body>
+
 <header>
-<div>ҒЫЛЫМИ ЖОБАНЫҢ НӘТИЖЕЛІК ӨНІМІ</div>
-<h1>TARIH & ӘDEBIET AI</h1>
-<p><b>Тарихи оқиғалардың әдеби туындыларда көрініс табуын зерттеу және тарихи құжаттарды әдеби шығармалармен салыстыру</b></p>
-<p>Зерттеуші: <b>Байзақ Перизат</b>, 11-сынып<br>Ғылыми жетекші: <b>Рзахметова Жарқынай</b></p>
+  <span class="badge">ҒЫЛЫМИ ЖОБАНЫҢ ЗЕРТТЕУ ӨНІМІ</span>
+  <h1>ТАРИХ & ӘДЕБИЕТ AI</h1>
+  <p><b>Тақырып:</b> «Тарих және әдебиет: қазақ руханиятының тоғысуы жасанды интеллект заманында»</p>
+  <p>Тарихи құжаттар мен әдеби шығармаларды салыстыруға, тарихи тұлғалар мен оқиғаларды зерттеуге және оқушының білімін онлайн тексеруге арналған интерактивті ғылыми жоба.</p>
+  <p><b>Зерттеуші:</b> 11-сынып оқушысы Байзақ Перизат &nbsp; | &nbsp; <b>Жетекші:</b> Рзахметова Жарқынай</p>
 </header>
 
 <nav>
-<a href="#project">Жоба</a><a href="#works">Шығармалар</a><a href="#gallery">Галерея</a><a href="#timeline">Хронология</a><a href="#5d">5D әдісі</a>
-<a href="#quiz">Онлайн тест</a><a href="#ai">AI-сарапшы</a><a href="#result">Нәтиже</a><a href="#teacher">Мұғалімге</a>
+<a href="#about">Жоба</a>
+<a href="#history">Тарихи оқиғалар</a>
+<a href="#figures">Тұлғалар</a>
+<a href="#works">Әдеби шығармалар</a>
+<a href="#compare">Салыстыру</a>
+<a href="#ai">AI қолданылуы</a>
+<a href="#quiz">20 сұрақтық тест</a>
 </nav>
 
 <main>
-<section id="project" class="card">
-<h2>Зерттеу идеясы</h2>
-<p>Тарихи құжат оқиғаның деректік негізін береді, ал әдеби шығарма оны көркем образ арқылы танытады. Платформа оқушыға осы екі қабатты салыстыруға мүмкіндік береді.</p>
+
+<section id="about">
+<h2>Зерттеу туралы</h2>
 <div class="grid">
-<div class="tile"><b>Тарих</b><br>Нақты дерек, дата, тұлға, оқиға.</div>
-<div class="tile"><b>Әдебиет</b><br>Образ, сюжет, диалог, авторлық көзқарас.</div>
-<div class="tile"><b>AI</b><br>Ақпаратты құрылымдауға көмектесетін құрал.</div>
-<div class="tile"><b>5D</b><br>Дерек–Дәуір–Драма–Дәйектілік–Дүниетаным.</div>
+<div class="card"><strong>Өзектілігі</strong><p>Тарихи дерек пен көркем мәтінді қатар оқу оқушыға оқиғаның нақты деректік негізін және авторлық көркем бейнесін ажыратуға мүмкіндік береді.</p></div>
+<div class="card"><strong>Мақсаты</strong><p>Қазақ тарихындағы маңызды оқиғалардың әдеби шығармаларда бейнеленуін зерттеу және тарихи құжаттарды әдеби мәтіндермен салыстырудың цифрлық үлгісін жасау.</p></div>
+<div class="card"><strong>Нысаны</strong><p>Қазақ хандығы дәуірі, Абылай хан кезеңі, ХХ ғасыр басындағы саяси оқиғалар және оларды бейнелейтін әдеби шығармалар.</p></div>
+<div class="card"><strong>Өнім</strong><p>«ТАРИХ & ӘДЕБИЕТ AI» онлайн зерттеу платформасы және 20 сұрақтық автоматты бағаланатын тест.</p></div>
 </div>
+<div class="quote"><b>Зерттеу гипотезасы:</b> егер тарихи құжаттар мен әдеби шығармалар цифрлық құралдар және жасанды интеллект көмегімен жүйелі салыстырылса, оқушының тарихи-әдеби талдауы, дерекпен жұмыс істеуі және сыни ойлауы күшейеді.</div>
 </section>
 
-<section id="works" class="card">
-<h2>Зерттеу шығармалары</h2>
-<div class="grid">
-<div class="tile"><h3>«Көшпенділер»</h3><p>І. Есенберлин. Қазақ хандығы дәуірінің тарихи-көркем бейнесі.</p></div>
-<div class="tile"><h3>Абылай хан</h3><p>З.С. Тайшыбай жинағындағы құжаттар мен «Көшпенділердегі» көркем бейне салыстырылады.</p></div>
-<div class="tile"><h3>«Тар жол, тайғақ кешу»</h3><p>С. Сейфуллин. ХХ ғасыр басындағы саяси оқиғалардың авторлық-мемуарлық көрінісі.</p></div>
-</div>
-</section>
-
-
-<section id="gallery" class="card">
-<h2>🖼 Тарихи тұлғалар мен оқиғалар галереясы</h2>
-<p>Бұл бөлім тарихи тұлғаның/оқиғаның көрнекі бейнесін тарихи ақпаратпен бірге қарастыруға арналған. Әр суреттің астында дереккөзі көрсетілді.</p>
-<div class="gallery">
-<article class="person">
-<img src="https://zhaukhar.kz/wp-content/uploads/2024/11/image_rus_130%D1%85100-1.jpg" alt="Абылай хан портреті">
-<h3>Абылай хан</h3>
-<p><b>Тарихи тұлға.</b> XVIII ғасырдағы қазақ ханы, әскери және саяси қайраткер. Жобада оның тарихи құжаттардағы мәліметтері І. Есенберлиннің «Көшпенділеріндегі» көркем бейнемен салыстырылады.</p>
-<p class="source">Сурет: «Жауһар» галереясы. Сурет көркем портрет ретінде берілген; оны замандас фотосурет деп қабылдауға болмайды.</p>
-</article>
-<article class="person">
-<img src="https://www.zharar.com/uploads/shorttexts/author_image/2022-06-26-01-46-18.png" alt="Сәкен Сейфуллин портреті">
-<h3>Сәкен Сейфуллин</h3>
-<p><b>Әдебиет және тарих.</b> «Тар жол, тайғақ кешу» шығармасында 1916–1919 жылдардағы оқиғаларды, өзінің көрген-білгендерін және саяси өзгерістерді баяндайды.</p>
-<p class="source">Сурет: Zharar.com материалындағы портрет.</p>
-</article>
-<article class="person">
-<img src="https://cf2.ppt-online.org/files2/slide/b/bg8k97XaG23spJ1nOhuQBrYUvxmFZHTWfyIEAeN4Pz/slide-12.jpg" alt="Қазақ хандығының құрылуы картасы">
-<h3>Қазақ хандығының құрылуы</h3>
-<p><b>Тарихи оқиға.</b> Керей мен Жәнібек сұлтандардың көшуі және Қазақ хандығының қалыптасуы 1465–1466 жылдармен байланыстырылады.</p>
-<p class="source">Карта: ашық интернеттегі оқу материалы. Зерттеу үшін деректі E-history.kz хронологиясымен тексеру ұсынылады.</p>
-</article>
-<article class="person">
-<img src="https://e-history.kz/media/upload/2020/10/19/1a2b8a2f4e4a4e0f.jpg" alt="1916 жылғы ұлт-азаттық қозғалыс" onerror="this.style.display='none'">
-<h3>1916 жылғы ұлт-азаттық қозғалыс</h3>
-<p><b>Тарихи оқиға.</b> Бірінші дүниежүзілік соғыс жағдайындағы патша жарлығы мен отарлық саясатқа қарсылық Қазақстандағы 1916 жылғы көтерілістің маңызды алғышарттарының бірі болды.</p>
-<p class="source">Ақпарат: E-history.kz. Сурет жүктелмесе, оқиға карточкасы мәтіндік режимде қалады.</p>
-</article>
-</div>
-</section>
-
-<section id="timeline" class="card">
-<h2>⏳ Тарихи хронология</h2>
+<section id="history">
+<h2>Тарихи оқиғалар</h2>
 <div class="timeline">
-<div><b>1465–1466</b><span>Керей мен Жәнібек негізін қалаған Қазақ хандығының қалыптасуы.</span></div>
-<div><b>XVIII ғасыр</b><span>Абылай хан дәуірі, жоңғар қаупі және қазақ мемлекеттілігін нығайту кезеңі.</span></div>
-<div><b>1916</b><span>Қазақстандағы ұлт-азаттық қозғалыс.</span></div>
-<div><b>1917</b><span>Ресейдегі революциялар және Қазақстандағы саяси өзгерістер.</span></div>
-<div><b>1918–1919</b><span>Азамат соғысы, билік үшін күрес және Сәкен Сейфуллин бастан өткерген оқиғалар.</span></div>
+<article><h3>XV–XVIII ғасырлар — Қазақ хандығы</h3><p>Қазақ хандығының қалыптасуы, хандықтың саяси дамуы, ішкі бірлік және сыртқы саяси қатынастар әдебиетте тарихи жад пен көркем образдар арқылы беріледі.</p></article>
+<article><h3>XVIII ғасыр — Абылай хан дәуірі</h3><p>Абылай ханның саяси қызметі, жоңғар қаупі, қазақ жүздерінің байланысы және Ресей, Қытай сияқты көршілермен қарым-қатынас тарихи деректерде көрініс тапқан.</p></article>
+<article><h3>ХХ ғасырдың басы — ұлттық қозғалыс кезеңі</h3><p>Қоғамдық-саяси өзгерістер, ұлттық интеллигенцияның қызметі, революциялық оқиғалар мен азаматтық қақтығыстар Сәкен Сейфуллин шығармаларында көркем баяндалады.</p></article>
 </div>
 </section>
 
-<section id="5d" class="card">
-<h2>Авторлық «5D» тарихи-әдеби салыстыру</h2>
+<section id="figures">
+<h2>Тарихи тұлғалар</h2>
 <div class="grid">
-<div class="tile"><b>D1 — ДЕРЕК</b><br>Құжат не дейді?</div>
-<div class="tile"><b>D2 — ДӘУІР</b><br>Оқиға қандай жағдайда болды?</div>
-<div class="tile"><b>D3 — ДРАМА</b><br>Жазушы қалай көркемдеді?</div>
-<div class="tile"><b>D4 — ДӘЙЕКТІЛІК</b><br>Дерекке қаншалықты сәйкес?</div>
-<div class="tile"><b>D5 — ДҮНИЕТАНЫМ</b><br>Автор қандай идея береді?</div>
+<figure>
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Abulkhair_Khan.jpg" alt="Абылай хан" onerror="this.style.display='none'">
+<figcaption>Абылай хан — XVIII ғасырдағы қазақ ханы, мемлекет қайраткері.</figcaption>
+</figure>
+<figure>
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Abai_Kunanbaiuly.jpg" alt="Абай Құнанбайұлы" onerror="this.style.display='none'">
+<figcaption>Абай Құнанбайұлы — қазақ жазба әдебиетінің ірі тұлғасы.</figcaption>
+</figure>
+<figure>
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Shakarim_Kudaiberdiuly.jpg" alt="Шәкәрім Құдайбердіұлы" onerror="this.style.display='none'">
+<figcaption>Шәкәрім Құдайбердіұлы — ақын, ойшыл, тарих пен руханият мәселелерін көтерген қаламгер.</figcaption>
+</figure>
+<figure>
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mukhtar_Auezov.jpg" alt="Мұхтар Әуезов" onerror="this.style.display='none'">
+<figcaption>Мұхтар Әуезов — тарихи тұлғаларды көркем бейнелеуде үлкен үлес қосқан жазушы.</figcaption>
+</figure>
+</div>
+<p class="small">Ескерту: суреттер сыртқы ашық дереккөздерден жүктеледі. Интернет байланысы болмаса, мәтіндік бөлімдер жұмысын жалғастыра береді.</p>
+</section>
+
+<section id="works">
+<h2>Әдеби шығармалар және тарихи негіз</h2>
+<div class="grid">
+<div class="card">
+<h3>1.1 «Көшпенділер» — Ілияс Есенберлин</h3>
+<p>Трилогия қазақ халқының бірнеше тарихи кезеңін көркем түрде қамтиды. Зерттеуде Қазақ хандығы мен Абылай хан дәуірінің әдеби бейнесіне назар аударылады.</p>
+</div>
+<div class="card">
+<h3>1.2 Абылай хан: құжат және көркем бейне</h3>
+<p>З. С. Тайшыбайдың «Абылай хан: өмірі мен қызметіне қатысты құжаттар мен материалдардың жинағы» еңбегіндегі деректер І. Есенберлиннің «Көшпенділер» романындағы Абылай бейнесімен салыстырылады.</p>
+</div>
+<div class="card">
+<h3>1.3 «Тар жол, тайғақ кешу» — Сәкен Сейфуллин</h3>
+<p>Шығарма ХХ ғасыр басындағы күрделі саяси оқиғаларды, қоғамдық өзгерістерді және қазақ зиялыларының қызметін автордың көзімен суреттейді.</p>
+</div>
 </div>
 </section>
 
-<section id="quiz" class="card">
-<h2>📝 Оқушының онлайн тесті</h2>
-<p>Алдымен аты-жөніңіз бен сыныбыңызды енгізіңіз. Тест аяқталған соң нәтиже экранда көрсетіледі. <b>Мұғалімге жіберу</b> үшін төмендегі Google Apps Script нұсқаулығын орындап, сайттың баптау бөліміне Web App URL енгізіледі.</p>
-<label>Аты-жөніңіз<input id="studentName" placeholder="Мысалы: Байзақ Перизат"></label>
-<label>Сыныбыңыз<input id="studentClass" placeholder="11 А"></label>
-<div id="questions"></div>
-<button onclick="checkQuiz()">Нәтижені есептеу</button>
-<button class="secondary" onclick="sendResult()">📤 Мұғалімге жіберу</button>
-<div id="quizResult" class="result">Нәтиже әлі есептелген жоқ.</div>
-<p class="small">Ескерту: Web App URL енгізілмесе, «Мұғалімге жіберу» батырмасы тек жергілікті режимде нәтиже көрсетеді.</p>
+<section id="compare">
+<h2>Тарихи құжат пен әдеби мәтінді салыстыру</h2>
+<div class="compare">
+<table>
+<thead><tr><th>Зерттеу өлшемі</th><th>Тарихи құжат</th><th>Әдеби шығарма</th><th>Зерттеуші сұрағы</th></tr></thead>
+<tbody>
+<tr><td>Деректік негіз</td><td>Оқиға, дата, ресми мәлімет, куәлік</td><td>Тарихи негізге құрылған көркем баяндау</td><td>Қай бөлігі нақты дерекпен дәлелденеді?</td></tr>
+<tr><td>Тұлға бейнесі</td><td>Саяси қызметі мен іс-әрекеті</td><td>Мінезі, сөзі, ішкі дүниесі көркемделеді</td><td>Автор тұлғаның қай қырын күшейткен?</td></tr>
+<tr><td>Оқиға</td><td>Нақты тарихи контекст</td><td>Сюжет, диалог, композиция арқылы беріледі</td><td>Көркемдік өзгеріс бар ма?</td></tr>
+<tr><td>Авторлық ұстаным</td><td>Құжаттың мақсаты мен жасалу жағдайы маңызды</td><td>Жазушының идеясы мен көркемдік мақсаты бар</td><td>Екі дерек арасында қандай айырмашылық бар?</td></tr>
+</tbody>
+</table>
+</div>
 </section>
 
-<section id="ai" class="card ai">
-<h2>🤖 AI-сарапшы</h2>
-<p>Демонстрациялық көмекші. Оның жауабы тарихи деректің орнына жүрмейді.</p>
-<input id="aiq" placeholder="Мысалы: Абылай ханның роман мен құжаттағы айырмашылығы қандай?">
-<button onclick="askAI()">Сұрау</button>
-<div id="aians" class="result">Сұрағыңызды енгізіңіз.</div>
+<section id="ai" class="ai">
+<h2>Жасанды интеллектіні қолдану</h2>
+<div class="grid">
+<div class="card"><strong>1. Ақпаратты жүйелеу</strong><p>AI көмегімен тарихи оқиға, тұлға және шығарма туралы мәліметтерді тақырыптарға бөлу.</p></div>
+<div class="card"><strong>2. Салыстырмалы талдау</strong><p>Тарихи дерек пен әдеби мәтіндегі ұқсастық пен айырмашылықтарды анықтауға көмек алу.</p></div>
+<div class="card"><strong>3. Сұрақ құрастыру</strong><p>Оқушы деңгейіне сай тест және зерттеу сұрақтарын дайындау.</p></div>
+<div class="card"><strong>4. Сыни тексеру</strong><p>AI берген жауапты міндетті түрде кітап, құжат және сенімді тарихи дерекпен салыстыру.</p></div>
+</div>
+<div class="quote"><b>Маңызды қағида:</b> жасанды интеллект — зерттеушінің орнына дереккөз емес, зерттеу жұмысын жеңілдететін көмекші құрал. Соңғы ғылыми тұжырым нақты деректермен тексерілуі тиіс.</div>
 </section>
 
-<section id="result" class="card">
-<h2>📊 Нәтиже</h2>
-<p id="summary">Тестті тапсырғаннан кейін жеке нәтижеңіз осында көрсетіледі.</p>
+<section id="quiz">
+<h2>Онлайн тест — 20 сұрақ</h2>
+<p>Аты-жөніңіз бен сыныбыңызды енгізіп, барлық 20 сұраққа жауап беріңіз. Әр дұрыс жауап — 1 балл.</p>
+<div class="grid">
+<div><label><b>Оқушының аты-жөні</b></label><input id="studentName" type="text" placeholder="Аты-жөніңіз"></div>
+<div><label><b>Сыныбы</b></label><input id="studentClass" type="text" placeholder="Мысалы: 11-сынып"></div>
+</div>
+<div class="progress-wrap"><div id="progress"></div></div>
+<div id="progressText" class="small">Жауап берілді: 0/20</div>
+<div id="quizBox"></div>
+<button class="btn" onclick="checkQuiz()">Нәтижені есептеу</button>
+<button class="btn secondary" onclick="resetQuiz()">Тазалау</button>
+<div id="result" class="result"></div>
 </section>
 
-<section id="teacher" class="card">
-<h2>👩‍🏫 Мұғалімге арналған онлайн нәтиже жүйесі</h2>
-<p>Оқушылардың жауаптарын интернет арқылы жинау үшін Google Sheets + Google Apps Script қолдануға болады. Бұл тәсілде нәтижелер кестеге автоматты түседі.</p>
-<ol>
-<li>Google Sheets-та жаңа кесте ашыңыз.</li>
-<li>Extensions → Apps Script бөліміне кіріңіз.</li>
-<li>Төмендегі дайын Apps Script кодын орналастырыңыз.</li>
-<li>Deploy → New deployment → Web app → Anyone етіп жариялаңыз.</li>
-<li>Шыққан Web App URL-ін осы сайттың <code>WEB_APP_URL</code> айнымалысына енгізіңіз.</li>
-</ol>
-<p><b>Маңызды:</b> Web App URL-ін сайттың кодына енгізбей тұрып оқушылардың нәтижесі ортақ кестеге түспейді.</p>
+<section>
+<h2>Зерттеу қорытындысы</h2>
+<p>Тарихи құжат пен әдеби шығарманы қатар талдау оқушыға «тарихи шындық» пен «көркемдік шешімнің» арақатынасын түсінуге мүмкіндік береді. Ал цифрлық сайт зерттеу нәтижесін бір ортаға жинақтап, оқушыға өз білімін интерактивті түрде тексеруге жағдай жасайды.</p>
+<div class="quote"><b>Практикалық маңызы:</b> бұл платформаны Қазақстан тарихы, қазақ әдебиеті сабақтарында, ғылыми жоба қорғауда, факультативте және оқушылардың өзіндік зерттеу жұмысында пайдалануға болады.</div>
 </section>
 
-<section class="card">
-<h2>📚 Дереккөздер және сурет көздері</h2>
-<ul>
-<li><a href="https://e-history.kz/kz/chronology/event/116" target="_blank">E-history.kz — Қазақ хандығының 1465–1466 жылдардағы қалыптасуы.</a></li>
-<li><a href="https://e-history.kz/kz/history-of-kazakhstan/show/9002" target="_blank">E-history.kz — Сәкеннің «Тар жол, тайғақ кешуі» туралы тарихи материал.</a></li>
-<li><a href="https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D0%BA%D0%BE%D0%B5_%D1%85%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE1465.png" target="_blank">Wikimedia Commons — Қазақ хандығының картасы.</a></li>
-<li><a href="https://zhaukhar.kz/product/%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82-%D0%B0%D0%B1%D1%8B%D0%BB%D0%B0%D0%B9-%D1%85%D0%B0%D0%BD%D0%B0/" target="_blank">«Жауһар» галереясы — Абылай хан портреті.</a></li>
-<li><a href="https://www.zharar.com/index.php?action=item&do=shorttexts&id=21107" target="_blank">Zharar.com — Сәкен Сейфуллин портреті.</a></li>
-</ul>
-<p class="small"><b>Ғылыми ескерту:</b> портреттер мен иллюстрациялар тарихи деректің өзі емес. Тұлғаның сыртқы бейнесін дәлелдейтін дерек ретінде тек сенімді музейлік/архивтік материалдар қолданылуы тиіс.</p>
-</section>
 </main>
 
-<footer>TARIH & ӘDEBIET AI • 2026<br>Байзақ Перизат • Рзахметова Жарқынай</footer>
+<footer>
+<p><b>ТАРИХ & ӘДЕБИЕТ AI</b></p>
+<p>Ғылыми жоба: «Тарих және әдебиет: қазақ руханиятының тоғысуы жасанды интеллект заманында»</p>
+<p>Зерттеуші: Байзақ Перизат | Жетекші: Рзахметова Жарқынай</p>
+</footer>
 
 <script>
-const WEB_APP_URL=""; // Google Apps Script Web App URL-ін осы жерге қойыңыз.
-
-const data=[
-["1. «Көшпенділер» шығармасының авторы кім?",["І. Есенберлин","С. Сейфуллин","М. Әуезов","Ш. Уәлиханов"],0],
-["2. «Тар жол, тайғақ кешу» шығармасының авторы кім?",["І. Есенберлин","С. Сейфуллин","А. Байтұрсынұлы","Ә. Кекілбайұлы"],1],
-["3. Тарихи құжаттың басты ерекшелігі қандай?",["Деректік ақпарат беру","Кейіпкер ойлап табу","Тек эмоция беру","Фантастика жасау"],0],
-["4. Әдеби шығармада не көбірек көрінуі мүмкін?",["Авторлық интерпретация","Тек ресми хат","Тек статистика","Тек дата"],0],
-["5. З.С. Тайшыбай жинағы бұл жобада кімге қатысты деректер үшін қолданылады?",["Абылай хан","Абай","Шоқан","Сәкен"],0],
-["6. 5D әдісіндегі D1 нені білдіреді?",["Дерек","Дәуір","Драма","Дүниетаным"],0],
-["7. 5D әдісіндегі D4 нені білдіреді?",["Дерек","Дәуір","Дәйектілік","Драма"],2],
-["8. AI тарихи зерттеуде қалай қолданылуы керек?",["Көмекші құрал ретінде","Деректің орнына","Тексерусіз","Тек жауап көшіру үшін"],0],
-["9. «Тар жол, тайғақ кешу» қай кезеңді зерттеуге мүмкіндік береді?",["ХХ ғасыр басын","Ежелгі дәуірді","Алтын Орданы","Қазақ хандығының құрылуын ғана"],0],
-["10. Жобаның негізгі цифрлық өнімі қандай?",["TARIH & ӘDEBIET AI сайты","Ойын консолі","Электрондық күнделік","Музыкалық бағдарлама"],0]
+const questions = [
+{q:"«Көшпенділер» тарихи романдар циклінің авторы кім?",a:["Ілияс Есенберлин","Сәкен Сейфуллин","Мұхтар Әуезов","Шәкәрім Құдайбердіұлы"],c:0},
+{q:"«Көшпенділер» шығармасында қай тарихи кезеңдер кеңінен қамтылады?",a:["Қазақ халқының бірнеше тарихи дәуірі","Тек ХХІ ғасыр","Тек Екінші дүниежүзілік соғыс","Тек кеңестік кезең"],c:0},
+{q:"Зерттеудегі негізгі әдістердің бірі қандай?",a:["Тарихи құжат пен әдеби мәтінді салыстыру","Тек жаттау","Тек сауалнама","Тек сурет салу"],c:0},
+{q:"Абылай хан қай ғасырдағы қазақ тарихының аса маңызды тұлғасы?",a:["XVIII ғасыр","XIII ғасыр","XX ғасыр","XXI ғасыр"],c:0},
+{q:"З. С. Тайшыбай еңбегінің зерттеу үшін маңызы неде?",a:["Абылай ханға қатысты құжаттар мен материалдарды жинақтайды","Тек көркем әңгімелерден тұрады","Тек географияны сипаттайды","Тек музыка тарихын береді"],c:0},
+{q:"Тарихи құжаттың негізгі ерекшелігі қандай?",a:["Нақты тарихи дерекке сүйенуі","Тек қиялға құрылуы","Өлең түрінде болуы міндетті","Кейіпкерлері ойдан шығарылуы"],c:0},
+{q:"Әдеби шығарма тарихи оқиғаны қалай бере алады?",a:["Көркем бейне, сюжет, диалог арқылы","Тек кесте арқылы","Тек статистика арқылы","Тек ресми бұйрық арқылы"],c:0},
+{q:"«Тар жол, тайғақ кешу» шығармасының авторы кім?",a:["Сәкен Сейфуллин","Ілияс Есенберлин","Абай Құнанбайұлы","Мұхтар Әуезов"],c:0},
+{q:"«Тар жол, тайғақ кешу» қай кезең оқиғаларымен байланысты?",a:["ХХ ғасырдың басындағы саяси оқиғалармен","XV ғасырдағы оқиғалармен ғана","Ежелгі Риммен","XXI ғасырдағы цифрландырумен"],c:0},
+{q:"Зерттеу тақырыбындағы «қазақ руханияты» ұғымы нені қамтиды?",a:["Тарих, әдебиет, мәдениет, ұлттық сана және тарихи жадты","Тек экономиканы","Тек спортты","Тек табиғатты"],c:0},
+{q:"AI ғылыми жобада қандай рөл атқара алады?",a:["Ақпаратты жүйелеу және талдауға көмекші құрал бола алады","Дереккөздерді толық алмастырады","Тарихи шындықты өзі жасайды","Ғылыми дәлелдеуді қажет етпейді"],c:0},
+{q:"AI берген тарихи ақпаратпен не істеу қажет?",a:["Сенімді дереккөздермен тексеру қажет","Тексермей қабылдау қажет","Жою қажет","Тек әлеуметтік желіден тексеру қажет"],c:0},
+{q:"Тарихи тұлғаның әдеби бейнесі дегеніміз не?",a:["Жазушы жасаған көркем образ","Тек ресми құжат","Тек фотосурет","Тек статистикалық кесте"],c:0},
+{q:"Салыстырмалы талдаудың мақсаты қандай?",a:["Ұқсастықтар мен айырмашылықтарды анықтау","Бір ғана деректі жаттау","Тек сурет жинау","Тест санын көбейту"],c:0},
+{q:"Тарихи дерек пен көркем мәтіннің айырмашылығы неде?",a:["Дерек нақты мәліметке, көркем мәтін авторлық көркемдік шешімге сүйенеді","Екеуінің айырмашылығы жоқ","Әдеби шығармада ешқандай тарихи негіз болмайды","Құжат міндетті түрде қиялдан туады"],c:0},
+{q:"Зерттеудің практикалық өнімі қандай?",a:["Интерактивті онлайн зерттеу платформасы","Тек қағаз дәптер","Тек плакат","Тек аудио жазба"],c:0},
+{q:"Сайттағы онлайн тесттің мақсаты қандай?",a:["Оқушының тарихи-әдеби білімін интерактивті тексеру","Тек сайтты безендіру","Файл сақтау","Сурет өңдеу"],c:0},
+{q:"Зерттеуші тарихи оқиғаны әдеби шығарма арқылы зерттегенде нені ескеруі керек?",a:["Авторлық ұстаным мен көркемдік тәсілді","Тек кітаптың көлемін","Тек мұқабаның түсін","Тек баспаның атауын"],c:0},
+{q:"Ғылыми жобаның негізгі құндылығы қандай?",a:["Тарих пен әдебиетті цифрлық ортада байланыстырып, дерекпен жұмыс істеуге үйрету","Тек мәтінді көшіру","Тек тест жасау","Тек сайттың түсін өзгерту"],c:0},
+{q:"Бұл сайтты қай жерде қолдануға болады?",a:["Сабақта, факультативте, ғылыми жоба мен өзіндік зерттеуде","Тек ойын үшін","Тек музыка тыңдау үшін","Тек сурет салу үшін"],c:0}
 ];
 
-const qbox=document.getElementById("questions");
-data.forEach((x,i)=>{
- let d=document.createElement("div"); d.className="quiz";
- d.innerHTML="<b>"+x[0]+"</b>"+x[1].map((a,j)=>`<label><input type="radio" name="q${i}" value="${j}"> ${a}</label>`).join("");
- qbox.appendChild(d);
-});
-
-let lastResult=null;
+function renderQuiz(){
+ const box=document.getElementById("quizBox");
+ box.innerHTML=questions.map((x,i)=>`
+ <div class="quiz-card">
+ <h3>${i+1}. ${x.q}</h3>
+ ${x.a.map((opt,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"> ${opt}</label>`).join("")}
+ </div>`).join("");
+ document.querySelectorAll('input[type=radio]').forEach(r=>r.addEventListener('change',updateProgress));
+}
+function updateProgress(){
+ let n=0;
+ questions.forEach((_,i)=>{if(document.querySelector('input[name="q'+i+'"]:checked'))n++});
+ document.getElementById("progress").style.width=(n/20*100)+"%";
+ document.getElementById("progressText").textContent=`Жауап берілді: ${n}/20`;
+}
 function checkQuiz(){
  const name=document.getElementById("studentName").value.trim();
  const cls=document.getElementById("studentClass").value.trim();
- if(!name||!cls){alert("Аты-жөніңіз бен сыныбыңызды енгізіңіз.");return;}
+ if(!name || !cls){alert("Аты-жөніңіз бен сыныбыңызды енгізіңіз.");return;}
  let score=0, answered=0;
- data.forEach((x,i)=>{let r=document.querySelector(`input[name=q${i}]:checked`);if(r){answered++;if(+r.value===x[2])score++;}});
- let pct=Math.round(score/data.length*100);
- lastResult={name,cls,score,total:data.length,pct,date:new Date().toLocaleString("kk-KZ")};
- document.getElementById("quizResult").innerHTML=`${name}, нәтижеңіз: <b>${score}/${data.length}</b> — <b>${pct}%</b>. Жауап берілгені: ${answered}/${data.length}.`;
- document.getElementById("summary").innerHTML=`<b>${name}</b>, ${cls} — <b>${score}/${data.length}</b> (${pct}%).`;
+ questions.forEach((x,i)=>{
+   const r=document.querySelector('input[name="q'+i+'"]:checked');
+   if(r){answered++; if(Number(r.value)===x.c)score++;}
+ });
+ if(answered<20){alert(`Барлық сұраққа жауап беріңіз. Қазір ${answered}/20 сұраққа жауап берілді.`);return;}
+ const percent=score*5;
+ let level=percent>=90?"Өте жоғары нәтиже":percent>=75?"Жақсы нәтиже":percent>=50?"Орташа нәтиже":"Қосымша дайындық қажет";
+ const result=document.getElementById("result");
+ result.style.display="block";
+ result.innerHTML=`<div class="score">${score}/20 балл — ${percent}%</div>
+ <p><b>Оқушы:</b> ${escapeHtml(name)}<br><b>Сыныбы:</b> ${escapeHtml(cls)}<br><b>Деңгейі:</b> ${level}</p>
+ <p>Нәтиже автоматты түрде есептелді. Бұл нәтиже сайттың браузерінде ғана көрсетіледі.</p>
+ <button class="btn" onclick="copyResult()">Нәтижені көшіру</button>`;
+ result.scrollIntoView({behavior:"smooth",block:"center"});
 }
-async function sendResult(){
- if(!lastResult){checkQuiz();}
- if(!lastResult)return;
- if(!WEB_APP_URL){alert("WEB_APP_URL әлі енгізілмеген. Нәтиже есептелді, бірақ мұғалімнің Google Sheets кестесіне жіберу қосылмаған.");return;}
- try{
-   await fetch(WEB_APP_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(lastResult)});
-   alert("Нәтиже мұғалімнің онлайн кестесіне жіберілді.");
- }catch(e){alert("Жіберу кезінде қате болды. Web App URL және жариялау баптауларын тексеріңіз.");}
+function copyResult(){
+ const result=document.getElementById("result").innerText;
+ navigator.clipboard?.writeText(result).then(()=>alert("Нәтиже көшірілді."));
 }
-function askAI(){
- let q=document.getElementById("aiq").value.toLowerCase(),a="Сұрағыңызды нақтылаңыз.";
- if(q.includes("абылай"))a="Абылай ханның тарихи бейнесін құжаттағы деректермен, ал әдеби бейнесін «Көшпенділердегі» көркем сипаттамамен салыстырамыз. Диалог, эмоция және ішкі ой сияқты элементтер көркем интерпретация болуы мүмкін.";
- else if(q.includes("көшпенді"))a="«Көшпенділер» тарихи материалды көркем сюжет, кейіпкерлер және авторлық баяндау арқылы ұсынады. Нақты фактіні дереккөзбен тексеру қажет.";
- else if(q.includes("тар жол"))a="«Тар жол, тайғақ кешу» ХХ ғасыр басындағы саяси оқиғаларды автордың естелігі мен көзқарасы арқылы бейнелейді.";
- else if(q.includes("5d"))a="5D: Дерек, Дәуір, Драма, Дәйектілік, Дүниетаным.";
- else a="Бұл платформадағы AI-сарапшы тек бағыт береді. Ғылыми қорытынды жасау үшін жауапты сенімді тарихи дерекпен тексеріңіз.";
- document.getElementById("aians").innerText=a;
+function resetQuiz(){
+ document.getElementById("studentName").value="";
+ document.getElementById("studentClass").value="";
+ document.querySelectorAll('input[type=radio]').forEach(r=>r.checked=false);
+ document.getElementById("progress").style.width="0%";
+ document.getElementById("progressText").textContent="Жауап берілді: 0/20";
+ document.getElementById("result").style.display="none";
+ window.scrollTo({top:document.getElementById("quiz").offsetTop-60,behavior:"smooth"});
 }
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
+renderQuiz();
 </script>
-</body></html>
+</body>
+</html>
